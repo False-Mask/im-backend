@@ -21,6 +21,14 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // https://mvnrepository.com/artifact/com.alibaba/druid
+    implementation("com.alibaba:druid:1.2.15")
+
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    implementation("com.mysql:mysql-connector-j:8.0.31")
+
+
 }
 
 tasks.withType<KotlinCompile> {
