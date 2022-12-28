@@ -7,7 +7,10 @@ package com.example.im.bean
  *@mail  2623036785@qq.com
  */
 data class User(
-    val uid: Int,
-    val userName: String,
-    val pwd: String
+    var uid: Int = 0,
+    var userName: String = "",
+    var pwd: String = "",
+    var name: String = "",
+    var sex: String = "",
+    var age: Int = -1
 )

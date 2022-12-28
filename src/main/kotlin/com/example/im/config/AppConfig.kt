@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource
  */
 @Configuration
 //导入mybatis配置
-@Import(MyBatisConfig::class)
+@Import(MyBatisConfig::class, SpringMvcConfig::class)
 //导入properties文件
 @PropertySource("classpath:application.properties")
 class AppConfig {
