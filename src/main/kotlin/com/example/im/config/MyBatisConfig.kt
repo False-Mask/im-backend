@@ -3,8 +3,10 @@ package com.example.im.config
 import com.alibaba.druid.pool.DruidDataSource
 import org.mybatis.spring.SqlSessionFactoryBean
 import org.mybatis.spring.annotation.MapperScan
+import org.mybatis.spring.mapper.MapperScannerConfigurer
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.PropertySource
 import javax.sql.DataSource
 
 /**
@@ -24,24 +26,24 @@ class MyBatisConfig {
         setDataSource(dataSource)
     }
 
-    @Value("\${jdbc.driver}")
-    private lateinit var driverName: String
+//    高版本已经不需要手动设置driver了,通过spi自动装入
+//    @Value("\${jdbc.driver}")
+//    private lateinit var driverName: String
 
     @Value("\${jdbc.url}")
-    private lateinit var url: String
+    private lateinit var jdbcUrl: String
 
     @Value("\${jdbc.username}")
-    private lateinit var username: String
+    private lateinit var userName: String
 
     @Value("\${jdbc.pwd}")
     private lateinit var pwd: String
 
     @Bean
     fun produceDataSource(): DataSource = DruidDataSource().apply {
-        username = username
+        username = userName
         password = pwd
-        url = url
-        driverClassName = driverName
+        url = jdbcUrl
 
     }
 

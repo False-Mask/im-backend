@@ -2,6 +2,7 @@ package com.example.im.config
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
+import org.springframework.context.annotation.PropertySource
 
 /**
  *@author ZhiQiang Tu
@@ -10,7 +11,10 @@ import org.springframework.context.annotation.Import
  *@mail  2623036785@qq.com
  */
 @Configuration
+//导入mybatis配置
 @Import(MyBatisConfig::class)
+//导入properties文件
+@PropertySource("classpath:application.properties")
 class AppConfig {
 
 
