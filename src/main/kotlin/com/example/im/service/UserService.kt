@@ -2,6 +2,7 @@ package com.example.im.service
 
 import com.example.im.bean.*
 import com.example.im.dao.UserDao
+import com.example.im.utils.profiles
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -47,6 +48,8 @@ class UserService {
         if (registed(user.userName)) {
             return Error(code = 400, msg = "该用户已经注册了!!")
         }
+        //头像随机给一个
+        user.profile = profiles.random()
         //注册
         dao.insertUser(user)
         val u = dao.selectByNameAndPwd(user)
@@ -60,6 +63,8 @@ class UserService {
         if (null == dao.selectByNameAndPwd(user)) {
             return Error(code = 400, msg = "用户名或密码错误")
         }
+        val u = dao.selectByUserName(user.userName)
+        loginSuccess.data = u
         return loginSuccess
     }
 

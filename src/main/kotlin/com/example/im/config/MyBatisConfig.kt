@@ -44,7 +44,6 @@ class MyBatisConfig {
         username = userName
         password = pwd
         url = jdbcUrl
-
     }
 
 }

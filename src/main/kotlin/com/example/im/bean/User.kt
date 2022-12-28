@@ -12,5 +12,6 @@ data class User(
     var pwd: String = "",
     var name: String = "",
     var sex: String = "",
-    var age: Int = -1
+    var age: Int = -1,
+    var profile:String = ""
 )

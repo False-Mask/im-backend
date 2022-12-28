@@ -8,9 +8,9 @@ package com.example.im.bean
  */
 interface Result
 open class Success<T>(
-    val code: Int,
-    val msg: String,
-    val data: T? = null
+    var code: Int,
+    var msg: String,
+    var data: T? = null
 ) : Result
 
 open class Error(
