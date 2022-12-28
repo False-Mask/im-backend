@@ -1,6 +1,5 @@
 package com.example.im.controller
 
-import com.example.im.bean.Error
 import com.example.im.bean.Result
 import com.example.im.bean.User
 import com.example.im.service.UserService
@@ -24,9 +23,7 @@ class UserController {
 
     @RequestMapping("/register")
     @ResponseBody
-    fun register(
-        user: User
-    ): Result {
+    fun register(user: User): Result {
         return userService.register(user)
     }
 

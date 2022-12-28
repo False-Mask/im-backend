@@ -30,22 +30,22 @@ class UserService {
     fun register(user: User): Result {
         //判断用户名的合法性
         if (!user.userName.matches("[0-9]{1,10}".toRegex())) {
-            return Error(code = 200, msg = "账号必须是1-10位的数字!!")
+            return Error(code = 400, msg = "账号必须是1-10位的数字!!")
         }
         //密码校验
         if (!user.pwd.matches("[0-9a-f]{32}".toRegex())) {
-            return Error(code = 200, msg = "密码必须是32位md5值!!")
+            return Error(code = 400, msg = "密码必须是32位md5值!!")
         }
         //其他字段判别
         if (user.age < 0 || user.age > 100) {
-            return Error(code = 200, msg = "年龄非法!!")
+            return Error(code = 400, msg = "年龄非法!!")
         }
         if (user.sex != "男" && user.sex != "女") {
-            return Error(code = 200, msg = "性别非法!!")
+            return Error(code = 400, msg = "性别非法!!")
         }
         //如果已经注册
         if (registed(user.userName)) {
-            return Error(code = 200, msg = "该用户已经注册了!!")
+            return Error(code = 400, msg = "该用户已经注册了!!")
         }
         //注册
         dao.insertUser(user)
@@ -58,7 +58,7 @@ class UserService {
 
     fun login(user: User): Result {
         if (null == dao.selectByNameAndPwd(user)) {
-            return Error(code = 200, msg = "用户名或密码错误")
+            return Error(code = 400, msg = "用户名或密码错误")
         }
         return loginSuccess
     }
