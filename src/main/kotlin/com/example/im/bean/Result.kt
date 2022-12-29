@@ -8,8 +8,8 @@ package com.example.im.bean
  */
 interface Result
 open class Success<T>(
-    var code: Int,
-    var msg: String,
+    var code: Int = 200,
+    var msg: String = "成功",
     var data: T? = null
 ) : Result
 

@@ -1,9 +1,6 @@
 package com.example.im.service
 
-import com.example.im.bean.Error
-import com.example.im.bean.FriendAdded
-import com.example.im.bean.Result
-import com.example.im.bean.User
+import com.example.im.bean.*
 import com.example.im.dao.ContactDao
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -23,9 +20,6 @@ class ContactService {
     @Autowired
     private lateinit var friendAdded: FriendAdded
 
-    fun selectFriends(id: Int): List<User> {
-        return dao.selectFriends(id)
-    }
 
     fun addFriend(id: Int, fid: Int): Result {
         if (dao.selectByIdAndFriendId(id, fid) != null) {
@@ -33,6 +27,14 @@ class ContactService {
         }
         friendAdded.data = dao.insertFriends(id, fid)
         return friendAdded
+    }
+
+    fun addMessage(message: Message) {
+        dao.insertMessage(message)
+    }
+
+    fun selectContacts(id:Int): List<Contacts> {
+        return dao.selectContacts(id)
     }
 
 }

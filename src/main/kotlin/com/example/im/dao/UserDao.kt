@@ -20,6 +20,9 @@ interface UserDao {
     @Select("select * from User where userName=#{userName}")
     fun selectByUserName(userName: String): User?
 
+    @Select("select * from UserInfo where uid=#{uid}")
+    fun selectInfoByUid(uid: Int): User
+
     @Select("select * from User where userName=#{userName} and pwd=#{pwd}")
     fun selectByNameAndPwd(user: User): User?
 

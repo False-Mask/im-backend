@@ -63,7 +63,12 @@ class UserService {
         if (null == dao.selectByNameAndPwd(user)) {
             return Error(code = 400, msg = "用户名或密码错误")
         }
-        val u = dao.selectByUserName(user.userName)
+        val u = dao.selectByUserName(user.userName)!!
+        val uinfo = dao.selectInfoByUid(u.uid)
+        u.age = uinfo.age
+        u.profile = uinfo.profile
+        u.name = uinfo.name
+        u.sex = uinfo.sex
         loginSuccess.data = u
         return loginSuccess
     }
