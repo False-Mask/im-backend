@@ -60,9 +60,11 @@ class UserService {
 
 
     fun login(user: User): Result {
+        //从数据库内去查找是否有符合
         if (null == dao.selectByNameAndPwd(user)) {
             return Error(code = 400, msg = "用户名或密码错误")
         }
+        //对用户的bean的其他数据进行search
         val u = dao.selectByUserName(user.userName)!!
         val uinfo = dao.selectInfoByUid(u.uid)
         u.age = uinfo.age
