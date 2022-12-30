@@ -13,5 +13,8 @@ class ServletContainerInitConfig : AbstractAnnotationConfigDispatcherServletInit
 
     override fun getRootConfigClasses(): Array<Class<*>> = arrayOf(AppConfig::class.java)
 
-    override fun getServletConfigClasses(): Array<Class<*>> = arrayOf(SpringMvcConfig::class.java)
+    override fun getServletConfigClasses(): Array<Class<*>> =
+        arrayOf(SpringMvcConfig::class.java)
+
+
 }

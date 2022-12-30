@@ -1,6 +1,7 @@
 package com.example.im.dao
 
 import com.example.im.bean.Chat
+import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Result
 import org.apache.ibatis.annotations.Results
 import org.apache.ibatis.annotations.Select
@@ -35,5 +36,6 @@ where uid =#{from}
         Result(column = "isSelf", property = "isSelfMessage")
     )
     fun getChat(from: String, to: String): List<Chat>
+
 
 }

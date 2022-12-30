@@ -1,5 +1,7 @@
 package com.example.im.bean
 
+import com.google.gson.annotations.SerializedName
+
 /**
  *@author ZhiQiang Tu
  *@time 2022/12/28  20:28
@@ -8,8 +10,11 @@ package com.example.im.bean
  */
 data class Message(
     val id: Int = -1,
+    @SerializedName("msgFrom")
     val msgFrom: Int = -1,
+    @SerializedName("msgTo")
     val msgTo: Int = -1,
+    @SerializedName("content")
     val content: String = "",
     val time: Long = System.currentTimeMillis()
 )

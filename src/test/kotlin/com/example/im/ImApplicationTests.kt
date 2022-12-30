@@ -90,7 +90,6 @@ class ImApplicationTests {
     @Test
     fun testGetChat() {
 
-        println(chat.getChat(0, 2))
 
     }
 

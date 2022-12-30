@@ -23,6 +23,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0")
     implementation("org.springframework.boot:spring-boot-starter-websocket")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // https://mvnrepository.com/artifact/com.alibaba/druid
@@ -30,6 +31,11 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
     implementation("com.mysql:mysql-connector-j:8.0.31")
+
+    //虽然我知道有其他内置工具，但是我实在是不会用hh
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.10")
+
 
 
 }
