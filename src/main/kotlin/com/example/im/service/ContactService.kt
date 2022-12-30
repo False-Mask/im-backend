@@ -20,7 +20,7 @@ class ContactService {
     @Autowired
     private lateinit var friendAdded: FriendAdded
 
-
+    //添加好友
     fun addFriend(id: Int, fid: Int): Result {
         if (dao.selectByIdAndFriendId(id, fid) != null) {
             return Error(code = 400, msg = "已经添加过该好友")
@@ -29,10 +29,12 @@ class ContactService {
         return friendAdded
     }
 
+    //添加消息
     fun addMessage(message: Message) {
         dao.insertMessage(message)
     }
 
+    //赛选好友列表
     fun selectContacts(id:Int): List<Contacts> {
         return dao.selectContacts(id)
     }

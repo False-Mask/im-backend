@@ -25,6 +25,7 @@ class ChatController {
     @Autowired
     private lateinit var chat: ChatResult
 
+    //获取用户与用户的聊天记录
     @RequestMapping("/list")
     @ResponseBody
     fun list(

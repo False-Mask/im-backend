@@ -17,7 +17,7 @@ class ChatService {
 
     @Autowired
     private lateinit var dao: ChatDao
-
+    //获取聊天消息
     fun getChat(from: String, to: String): List<Chat> {
         return dao.getChat(from, to)
     }

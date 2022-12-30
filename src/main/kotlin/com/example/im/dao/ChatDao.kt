@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository
 @Repository
 interface ChatDao {
 
+    //查找用户聊天消息
     @Select(
         """
             select false as isSelf, profile, content as message, time as timeMills

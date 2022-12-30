@@ -29,7 +29,8 @@ interface UserDao {
     @Insert("insert into User (userName, pwd) values (#{userName},#{pwd})")
     fun insertUser(user: User)
 
-    @Insert("insert into UserInfo (uid, name, sex, age, profile) values (#{uid}, #{name}, #{sex}, #{age}, #{profile})")
+    @Insert("insert into UserInfo (uid, name, sex, age, profile) " +
+            "values (#{uid}, #{name}, #{sex}, #{age}, #{profile})")
     fun insertInfo(user: User)
 
 }

@@ -36,7 +36,6 @@ class ImApplicationTests {
                     profile = profiles.random()
                 )
             )
-
         }
     }
 

@@ -28,6 +28,7 @@ class ContactController {
     private lateinit var contactsResult: ContactsResult
 
 
+    //获取用户的好友列别
     @RequestMapping("/list")
     @ResponseBody
     fun searchContacts(@Param("id") id: Int): ContactsResult {
